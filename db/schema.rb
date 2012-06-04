@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604143424) do
+ActiveRecord::Schema.define(:version => 20120604172032) do
 
   create_table "recados", :force => true do |t|
     t.string   "conteudo"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120604143424) do
     t.string   "font_family"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "usuario_id"
   end
 
   create_table "usuarios", :force => true do |t|
