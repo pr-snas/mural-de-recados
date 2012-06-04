@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604125853) do
+ActiveRecord::Schema.define(:version => 20120604143424) do
+
+  create_table "recados", :force => true do |t|
+    t.string   "conteudo"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "z_index"
+    t.integer  "left"
+    t.integer  "top"
+    t.string   "background_color"
+    t.string   "font_family"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "usuarios", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

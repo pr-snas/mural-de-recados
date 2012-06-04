@@ -1,4 +1,8 @@
 MuralDeRecados::Application.routes.draw do
+  scope '/api' do
+    resources :recados
+  end
+
   devise_for :usuarios, skip: [:sessions, :passwords, :registrations]
 
   devise_scope :usuario do
