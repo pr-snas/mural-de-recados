@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require bootstrap-all
 //= require ./mural_de_recados
 //= require_tree ../templates/
 //= require_tree ./models
