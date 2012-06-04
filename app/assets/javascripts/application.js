@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require bootstrap-all
+//= require jquery.ui.draggable
 //= require ./mural_de_recados
 //= require_tree ../templates/
 //= require_tree ./models
