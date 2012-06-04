@@ -1,0 +1,65 @@
+<div class="modal">
+  <div class="modal-body">
+    <div class="entrar pull-left">
+      <h2>Entrar</h2>
+
+      <%= form_tag usuario_session_path do %>
+        <div class="control-group">
+          <%= label_tag :usuario_email, 'E-mail:' %>
+          <div class="controls">
+            <%= email_field_tag 'usuario[email]' %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= label_tag :usuario_password, 'Senha:' %>
+          <div class="controls">
+            <%= password_field_tag 'usuario[password]' %>
+          </div>
+        </div>
+
+        <%= submit_tag 'Entrar' %>
+      <% end %>
+    </div>
+
+    <div class="cadastrar pull-left">
+      <h2>Cadastrar</h2>
+
+      <%= form_tag usuario_registration_path do %>
+        <div class="control-group">
+          <%= label_tag :usuario_nome, 'Nome:' %>
+
+          <div class="controls">
+            <%= text_field_tag 'usuario[nome]' %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= label_tag :usuario_email, 'E-mail:' %>
+
+          <div class="controls">
+            <%= email_field_tag 'usuario[email]' %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= label_tag :usuario_password, 'Senha:' %>
+
+          <div class="controls">
+            <%= password_field_tag 'usuario[password]' %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= label_tag :usuario_password_confirmation, 'Confirmação de senha:' %>
+
+          <div class="controls">
+            <%= password_field_tag 'usuario[password_confirmation]' %>
+          </div>
+        </div>
+
+        <%= submit_tag 'Cadastrar' %>
+      <% end %>
+    </div>
+  </div>
+</div>
