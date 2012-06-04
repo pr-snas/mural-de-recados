@@ -5,6 +5,7 @@ gem 'thin'
 gem 'sqlite3'
 gem 'private_pub'
 gem 'devise'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
