@@ -12,6 +12,11 @@
  *= require_tree .
 */
 
+@import "compass_twitter_bootstrap";
+@import "compass_twitter_bootstrap_responsive";
+@import "compass_twitter_bootstrap_awesome";
+
 body {
+  background: url('body.jpg');
   padding-top: 60px;
 }
