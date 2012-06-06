@@ -8,15 +8,26 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require jquery.ui.resizable
  *= require_self
  *= require_tree .
 */
 
-@import "compass_twitter_bootstrap";
-@import "compass_twitter_bootstrap_responsive";
 @import "compass_twitter_bootstrap_awesome";
+@import "compass_twitter_bootstrap_responsive";
 
 body {
   background: url('body.jpg');
+  padding-bottom: 20px;
   padding-top: 60px;
+  @include box-sizing(border-box);
+}
+
+html, body, .container-fluid {
+  height: 100%;
+}
+
+.container-fluid .row-fluid {
+  height: 100%;
+  position: relative;
 }
