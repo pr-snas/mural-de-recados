@@ -16,6 +16,8 @@
 //= require backbone
 //= require bootstrap-all
 //= require jquery.ui.draggable
+//= require jquery.ui.resizable
+//= require jquery.transit
 //= require ./mural_de_recados
 //= require_tree ../templates/
 //= require_tree ./models
