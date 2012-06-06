@@ -1,0 +1,33 @@
+<div class="inner">
+  <span class="pushpin pins-<%= this.recado.get('pin_class') %>"></span>
+
+  <div class="front face">
+    <% if this.helpers.podeEditar: %>
+      <a href="#" class="close">close</a>
+      <div class="wrap" contenteditable>
+        <%= this.recado.get('conteudo') %>
+      </div>
+      <a href="#" class="info" title="info"><i class="icon-info-sign"></i> <span>info</span></a>
+    <% else: %>
+      <div class="wrap">
+        <%= this.recado.get('conteudo') %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="back face">
+    <p>
+      Created by
+      <% if this.recado.get('usuario').nome: %>
+        <%= this.recado.get('usuario').nome %>
+      <% else: %>
+        Anonimo
+      <% end %>
+      <% if this.recado.get('created_at') and this.recado.get('updated_at'): %>
+        on <%= this.helpers.formataData(this.recado.get('created_at')) %>,
+        updated at <%= this.helpers.formataData(this.recado.get('updated_at')) %>.
+      <% end %>
+    </p>
+    <a href="#" class="return" title="return"><i class="icon-circle-arrow-right"></i> <span>return</span></a>
+  </div>
+</div>

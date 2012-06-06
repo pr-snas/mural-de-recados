@@ -3,7 +3,10 @@ window.MuralDeRecados =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> alert 'Hello from Backbone!'
+  init: ->
+    window.zIndex = 0
+    new MuralDeRecados.Routers.Recados()
+    Backbone.history.start()
 
 $(document).ready ->
   MuralDeRecados.init()
