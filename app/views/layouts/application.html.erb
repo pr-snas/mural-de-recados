@@ -16,7 +16,6 @@
     <link href="images/favicon.ico" rel="shortcut icon">
   </head>
   <body>
-
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -35,13 +34,8 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div id="content" class="span12">
-          <%= yield %>
-        </div>
-      </div><!--/row-->
-    </div> <!-- /container -->
+    <div id="container" class="container-fluid"
+      data-recados='<%= Recado.all.to_json(include: { usuario: { except: [:email] } }) %>'></div>
 
     <div id="signin" class="hide fade">
       <%= render 'shared/signin' %>
@@ -50,6 +44,5 @@
     <!-- Javascripts
     ================================================== -->
     <%= javascript_include_tag "application" %>
-
   </body>
 </html>
