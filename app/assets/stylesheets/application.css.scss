@@ -23,11 +23,32 @@ body {
   @include box-sizing(border-box);
 }
 
-html, body, .container-fluid {
+html, body, #wrapper, .inner, .container-fluid {
   height: 100%;
 }
 
 .container-fluid .row-fluid {
   height: 100%;
   position: relative;
+}
+
+.flash-notice {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  z-index: 9999;
+  text-align: center;
+}
+
+.flash-notice .alert {
+  margin-bottom: 0;
+  display: inline-block;
+  padding-right: 14px;
+}
+
+.navbar {
+  .novo .icon-edit, .icon-signin {
+    font-size: 150%;
+    line-height: 9px;
+  }
 }
