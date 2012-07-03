@@ -20,6 +20,7 @@
     height: 100%;
 
     .pushpin {
+      @include backface-visibility(hidden);
       cursor: move;
       display: block;
       height: 48px;
@@ -79,11 +80,6 @@
       right: 8px;
       width: 11px;
       text-decoration: none;
-    }
-
-    .info span
-    , .return span {
-      display: none;
     }
 
     .close:active
