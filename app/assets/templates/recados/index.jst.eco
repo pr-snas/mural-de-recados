@@ -1,2 +1,29 @@
-<div id="recados" class="span12">
+<div class="flash-notice hide">
+  <div class="alert">
+  </div>
+</div>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="/">Mural de recados</a>
+      <ul class="nav pull-right">
+        <li><a class="novo" href="#"><i class="icon-edit"></i> Novo recado</a></li>
+        <!--<li class="divider-vertical"></li>
+        <li>
+          <a class="sign-in" data-toggle="modal" href="/entrar">
+            <i class="icon-signin"></i>
+            Entrar
+          </a>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="container" class="container-fluid">
+  <div class="row-fluid">
+    <div id="recados" class="span12">
+    </div>
+  </div>
 </div>
