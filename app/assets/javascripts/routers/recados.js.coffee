@@ -4,8 +4,8 @@ class MuralDeRecados.Routers.Recados extends Backbone.Router
 
   initialize: ->
     @collection = new MuralDeRecados.Collections.Recados()
-    @collection.reset($('#container').data('recados'))
+    @collection.reset($('#wrapper').data('recados'))
 
   index: ->
     view = new MuralDeRecados.Views.RecadosIndex(collection: @collection)
-    $('#container').html(view.render().el)
+    $('#wrapper').html(view.render().el)
