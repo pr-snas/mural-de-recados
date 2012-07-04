@@ -19,6 +19,7 @@
 //= require jquery.ui.draggable
 //= require jquery.ui.resizable
 //= require jquery.transit
+//= require notice
 //= require ./mural_de_recados
 //= require_tree ../templates/
 //= require_tree ./models

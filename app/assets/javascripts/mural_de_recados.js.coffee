@@ -4,7 +4,6 @@ window.MuralDeRecados =
   Views: {}
   Routers: {}
   init: ->
-    window.zIndex = 0
     new MuralDeRecados.Routers.Recados()
     Backbone.history.start()
     spinner.stop()
@@ -24,10 +23,20 @@ opts =
   zIndex: 2e9
 
 spinner = new Spinner(opts).spin($('#wrapper')[0])
+
 $(spinner.el).css(
   top: '50%'
   marginTop: '-50px'
 )
 
+window.zIndex = 0
+window.DOING_AJAX = false
+window.AJAX_ERROR = false
+
 $(document).ready ->
+  notice.init()
+
+  $(window).on 'beforeunload', ->
+    return 'Existe uma requisição em andamento. Deseja continuar?' if DOING_AJAX
+
   MuralDeRecados.init()

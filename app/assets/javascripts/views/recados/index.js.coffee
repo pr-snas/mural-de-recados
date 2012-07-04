@@ -16,6 +16,7 @@ class MuralDeRecados.Views.RecadosIndex extends Backbone.View
   acrescentaRecado: (recado) =>
     view = new MuralDeRecados.Views.Recado(model: recado)
     @$('#recados').append(view.render().el)
+    recado.bind 'destroy', -> view.remove()
 
   novoRecado: (e) ->
     defaultWidth = 210

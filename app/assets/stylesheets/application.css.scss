@@ -44,6 +44,14 @@ html, body, #wrapper, .inner, .container-fluid {
   margin-bottom: 0;
   display: inline-block;
   padding-right: 14px;
+
+  ul {
+    margin: 0;
+
+    li {
+      list-style-position: inside;
+    }
+  }
 }
 
 .navbar {
