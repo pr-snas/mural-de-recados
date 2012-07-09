@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.5'
 gem 'thin'
 gem 'sqlite3'
-gem 'private_pub'
 gem 'devise'
 gem 'cancan'
 
