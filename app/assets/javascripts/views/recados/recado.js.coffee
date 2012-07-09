@@ -15,12 +15,12 @@ class MuralDeRecados.Views.Recado extends Backbone.View
     @initResizable()
 
   render: =>
+    category = @model.get('category')
     $(@el).append(@template(recado: @model, helpers: @helpers))
-    $(@el).find('.inner').css(
-      backgroundColor: @model.get('background_color')
-      fontFamily: @model.get('font_family')
-      color: @model.get('text_color')
-    )
+    if category?
+      $(@el).find('.inner').css(
+        backgroundColor: category.background_color
+      )
     this
 
   helpers:

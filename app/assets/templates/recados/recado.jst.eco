@@ -1,5 +1,5 @@
 <div class="inner">
-  <span class="pushpin pins-<%= this.recado.get('pin_class') %>"></span>
+  <span class="pushpin pins-red"></span>
 
   <div class="front face">
     <% if this.helpers.podeEditar: %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709163700) do
+ActiveRecord::Schema.define(:version => 20120709170313) do
 
   create_table "categoria", :force => true do |t|
     t.string   "nome"
@@ -24,16 +24,12 @@ ActiveRecord::Schema.define(:version => 20120709163700) do
     t.string   "conteudo"
     t.integer  "width"
     t.integer  "height"
-    t.integer  "z_index",          :default => 0, :null => false
+    t.integer  "z_index",    :default => 0, :null => false
     t.integer  "left"
     t.integer  "top"
-    t.string   "background_color"
-    t.string   "font_family"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "usuario_id"
-    t.string   "text_color"
-    t.string   "pin_class"
   end
 
   create_table "usuarios", :force => true do |t|
