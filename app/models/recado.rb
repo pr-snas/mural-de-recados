@@ -1,5 +1,6 @@
 class Recado < ActiveRecord::Base
   belongs_to :usuario
+  belongs_to :categoria
 
   attr_accessible :background_color, :conteudo, :font_family, :height,
                   :left, :top, :width, :z_index, :usuario, :text_color,
