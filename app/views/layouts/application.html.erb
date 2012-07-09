@@ -16,7 +16,9 @@
     <link href="images/favicon.ico" rel="shortcut icon">
   </head>
   <body>
-    <div id="wrapper" data-recados='<%= raw Recado.all.to_json %>'>
+    <div id="wrapper"
+      data-recados='<%= raw Recado.all.to_json(include: :categoria) %>'
+      data-categorias='<%= raw Categoria.all.to_json %>'>
       <div class="loading"></div>
     </div>
 

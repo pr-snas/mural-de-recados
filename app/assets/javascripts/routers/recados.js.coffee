@@ -3,9 +3,15 @@ class MuralDeRecados.Routers.Recados extends Backbone.Router
     '': 'index'
 
   initialize: ->
+    @wrapper = $('#wrapper')
     @collection = new MuralDeRecados.Collections.Recados()
-    @collection.reset($('#wrapper').data('recados'))
+    @categorias = new MuralDeRecados.Collections.Categorias()
+    @collection.reset(@wrapper.data('recados'))
+    @categorias.reset(@wrapper.data('categorias'))
 
   index: ->
-    view = new MuralDeRecados.Views.RecadosIndex(collection: @collection)
-    $('#wrapper').html(view.render().el)
+    view = new MuralDeRecados.Views.RecadosIndex(
+      collection: @collection
+      categorias: @categorias
+    )
+    @wrapper.html(view.render().el)

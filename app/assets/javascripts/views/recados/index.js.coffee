@@ -4,12 +4,13 @@ class MuralDeRecados.Views.RecadosIndex extends Backbone.View
   events:
     'click .novo': 'novoRecado'
     
-  initialize: ->
+  initialize: (attr) ->
+    @categorias = attr.categorias
     $(@el).addClass('inner')
     @collection.on('add', @acrescentaRecado)
 
   render: ->
-    $(@el).html(@template())
+    $(@el).html(@template(categorias: @categorias))
     @collection.each(@acrescentaRecado)
     this
 
