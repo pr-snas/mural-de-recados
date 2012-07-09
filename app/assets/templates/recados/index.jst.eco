@@ -20,13 +20,6 @@
       <% end %>
       <ul class="nav pull-right">
         <li><a class="novo" href="#"><i class="icon-edit"></i> Novo recado</a></li>
-        <!--<li class="divider-vertical"></li>
-        <li>
-          <a class="sign-in" data-toggle="modal" href="/entrar">
-            <i class="icon-signin"></i>
-            Entrar
-          </a>
-        </li>-->
       </ul>
     </div>
   </div>
