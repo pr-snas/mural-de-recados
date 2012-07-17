@@ -1,8 +1,6 @@
 @import "compass/css3";
 @import "compass/css3/transform";
 @import "compass/css3/box-sizing";
-@import "pins/*.png";
-@include all-pins-sprites;
 
 .note {
   font-size: 14px;
@@ -20,6 +18,7 @@
     height: 100%;
 
     .pushpin {
+      background: url("pins/red.png") no-repeat;
       @include backface-visibility(hidden);
       cursor: move;
       display: block;
