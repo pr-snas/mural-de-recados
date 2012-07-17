@@ -17,13 +17,16 @@
   </head>
   <body>
     <div id="wrapper"
-      data-recados='<%= raw Recado.all.to_json(include: :categoria) %>'
+      data-recados='<%= raw Recado.all.to_json(include: [:categoria, usuario: {only: [:id, :nome]}]) %>'
       data-categorias='<%= raw Categoria.all.to_json %>'>
       <div class="loading"></div>
     </div>
 
     <!-- Javascripts
     ================================================== -->
+    <%= javascript_tag do %>
+      window.sessionId = '<%= request.session_options[:id] %>';
+    <% end %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
