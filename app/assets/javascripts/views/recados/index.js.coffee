@@ -2,6 +2,7 @@ class MuralDeRecados.Views.RecadosIndex extends Backbone.View
   template: JST['recados/index']
 
   events:
+    'mousedown .note': 'bringToFront'
     'click .novo': 'novoRecado'
     
   initialize: (attr) ->
@@ -32,5 +33,12 @@ class MuralDeRecados.Views.RecadosIndex extends Backbone.View
       left: Math.ceil(Math.random() * (w - paddingLeftRight - defaultWidth))
       top: Math.ceil(Math.random() * (h - paddingTopBottom - defaultHeight))
       pin_class: 'red'
+      z_index: ++window.zIndex
     )
     e.preventDefault()
+    
+  bringToFront: (e) ->
+    $target = $(e.target)
+    $target = $target.parents('.note') if $target.parents('.note')
+    $target.css('z-index', ++window.zIndex) if $target.css('z-index') < window.zIndex
+

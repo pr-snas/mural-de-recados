@@ -2,7 +2,6 @@ class MuralDeRecados.Views.Recado extends Backbone.View
   template: JST['recados/recado']
 
   events:
-    'mousedown': 'bringToFront'
     'click .close': 'close'
     'click .info': 'info'
     'keyup .wrap': 'updateContent'
@@ -74,9 +73,6 @@ class MuralDeRecados.Views.Recado extends Backbone.View
         model.save()
     )
 
-  bringToFront: (e) ->
-    $(@el).css('z-index', ++window.zIndex) if $(@el).css('z-index') < window.zIndex
-
   close: (e) =>
     model = @model
     $elem = $(@el)
@@ -99,5 +95,9 @@ class MuralDeRecados.Views.Recado extends Backbone.View
     e.preventDefault()
 
   updateContent: (e) =>
+    timeout = window.updateContentTimeout
+    clearTimeout timeout if timeout
     @model.set('conteudo', $(e.target).html())
-    @model.save()
+    window.updateContentTimeout = setTimeout =>
+      @model.save()
+    , 200

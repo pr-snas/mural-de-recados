@@ -7,7 +7,7 @@
       <div class="wrap" contenteditable>
         <%- this.recado.get('conteudo') %>
       </div>
-      <a href="#" class="info" title="info"><i class="icon-info-sign"></i></a>
+      <!--<a href="#" class="info" title="info"><i class="icon-info-sign"></i></a>-->
     <% else: %>
       <div class="wrap">
         <%- this.recado.get('conteudo') %>
