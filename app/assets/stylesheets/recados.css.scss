@@ -18,7 +18,7 @@
     height: 100%;
 
     .pushpin {
-      background: url("pins/red.png") no-repeat;
+      background: url("red.png") no-repeat;
       @include backface-visibility(hidden);
       cursor: move;
       display: block;
