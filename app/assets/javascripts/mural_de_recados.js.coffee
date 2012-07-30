@@ -10,11 +10,11 @@ window.MuralDeRecados =
 
 opts =
   lines: 13
-  length: 18
-  width: 4
-  radius: 22
+  length: 30
+  width: 5
+  radius: 31
   rotate: 0
-  color: '#000'
+  color: '#fff'
   speed: 0.9
   trail: 80
   shadow: true
