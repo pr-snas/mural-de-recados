@@ -3,48 +3,43 @@ class MuralDeRecados.Views.Recado extends Backbone.View
 
   events:
     'click .close': 'close'
-    'click .info': 'info'
+    'click .settings': 'settings'
+    'click .return': 'return'
     'keyup .wrap': 'updateContent'
 
   initialize: ->
-    $(@el).data('backbone-view', this)
+    @$el.data('backbone-view', this)
     @updateHigherZIndex()
     @loadStyle()
     @initDraggable()
     @initResizable()
 
   render: =>
-    category = @model.get('category')
-    $(@el).append(@template(recado: @model, helpers: @helpers))
-    if category?
-      $(@el).find('.inner').css(
-        backgroundColor: category.background_color
-      )
+    @$el.append(@template(recado: @model, owner: @isOwner()))
+    @$el.find('.info, .settings, .return').tooltip()
     this
 
-  helpers:
-    podeEditar: ->
-      true
-
-    formataData: (datetime) ->
-      true
+  isOwner: ->
+    true
 
   updateHigherZIndex: =>
     zIndex = @model.get('z_index')
     window.zIndex = zIndex if zIndex > window.zIndex
 
   loadStyle: =>
-    $(@el).addClass('note')
-    $(@el).css(
+    @$el.addClass('note')
+    @$el.css(
       top: @model.get('top')
       left: @model.get('left')
       height: @model.get('height')
       width: @model.get('width')
       zIndex: @model.get('z_index')
     )
+    cat = @model.get('category')
+    @$el.css('background-color', cat.background_color) if cat?
 
   initDraggable: =>
-    $(@el).draggable(
+    @$el.draggable(
       handle: '.pushpin'
       containment: "#recados"
       scroll: false
@@ -58,7 +53,7 @@ class MuralDeRecados.Views.Recado extends Backbone.View
     )
 
   initResizable: =>
-    $(@el).resizable(
+    @$el.resizable(
       minHeight: 150
       minWidth: 150
       handles: "se"
@@ -75,9 +70,8 @@ class MuralDeRecados.Views.Recado extends Backbone.View
 
   close: (e) =>
     model = @model
-    $elem = $(@el)
-    $elem.css('transform-origin', '0 0')
-    $elem.transition({
+    @$el.css('transform-origin', '0 0')
+    @$el.transition({
       opacity: 0,
       skewX: 30,
       skewY: 0,
@@ -87,11 +81,18 @@ class MuralDeRecados.Views.Recado extends Backbone.View
     )
     e.preventDefault()
 
-  info: (e) ->
-    $(@el).find('.inner').transition({
-      perspective: $(@el).width()
-      rotateY: -180
-    }, 800, 'out')
+  settings: (e) ->
+    $el = @$el
+    $el.find('.settings').tooltip('hide')
+    $el.find('.front').fadeOut 'fast', ->
+      $el.find('.back').fadeIn('fast')
+    e.preventDefault()
+
+  return: (e) ->
+    $el = @$el
+    $el.find('.return').tooltip('hide')
+    $el.find('.back').fadeOut 'fast', ->
+      $el.find('.front').fadeIn('fast')
     e.preventDefault()
 
   updateContent: (e) =>

@@ -2,12 +2,12 @@
   <span class="pushpin pins-red"></span>
 
   <div class="front face">
-    <% if this.helpers.podeEditar: %>
-      <a href="#" class="close">close</a>
+    <% if this.owner: %>
+      <a href="#" class="icon close">close</a>
       <div class="wrap" contenteditable>
         <%- this.recado.get('conteudo') %>
       </div>
-      <!--<a href="#" class="info" title="info"><i class="icon-info-sign"></i></a>-->
+      <a href="#" class="icon settings" title="Configurações"><i class="icon-cog"></i></a>
     <% else: %>
       <div class="wrap">
         <%- this.recado.get('conteudo') %>
@@ -16,17 +16,15 @@
   </div>
 
   <div class="back face">
-    <p>
-      Created by
-      <% if this.recado.get('usuario')?.nome: %>
-        <%= this.recado.get('usuario').nome %>
-      <% else: %>
-        Anonimo
-      <% end %>
-      <% if this.recado.get('created_at') and this.recado.get('updated_at'): %>
-        on <%= this.helpers.formataData(this.recado.get('created_at')) %>,
-        updated at <%= this.helpers.formataData(this.recado.get('updated_at')) %>.
-      <% end %>
-    </p>
+    <form action="#">
+      <label for="cat_<%= @recado.cid %>">Categoria:</label>
+      <select id="cat_<%= @recado.cid %>">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </form>
+    <a href="#" class="icon return" title="Voltar"><i class="icon-share-alt"></i></a>
   </div>
 </div>
