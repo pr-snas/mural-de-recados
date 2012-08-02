@@ -15,6 +15,8 @@
 
 @import "compass_twitter_bootstrap_awesome";
 @import "compass_twitter_bootstrap_responsive";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 
 body {
   background: url('body.jpg');
@@ -59,4 +61,19 @@ html, body, #wrapper, .inner, .container-fluid {
     font-size: 150%;
     line-height: 9px;
   }
+}
+
+.loading {
+  position: absolute;
+  background: #000;
+  background: hsla(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  left: 50%;
+  top: 50%;
+  @include border-radius(12px);
+  @include box-shadow(1px 1px 4px #333);
 }
