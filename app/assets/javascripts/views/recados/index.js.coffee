@@ -6,6 +6,7 @@ class MuralDeRecados.Views.RecadosIndex extends Backbone.View
     'click .novo': 'novoRecado'
     
   initialize: (attr) ->
+    window.zIndex = 0
     @categorias = attr.categorias
     $(@el).addClass('inner')
     @collection.on('add', @acrescentaRecado)
@@ -16,7 +17,7 @@ class MuralDeRecados.Views.RecadosIndex extends Backbone.View
     this
 
   acrescentaRecado: (recado) =>
-    view = new MuralDeRecados.Views.Recado(model: recado)
+    view = new MuralDeRecados.Views.Recado(model: recado, categorias: @categorias)
     @$('#recados').append(view.render().el)
     recado.bind 'destroy', -> view.remove()
 

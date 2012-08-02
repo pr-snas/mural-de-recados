@@ -5,7 +5,7 @@ window.MuralDeRecados =
   Routers: {}
   init: ->
     new MuralDeRecados.Routers.Recados()
-    Backbone.history.start()
+    Backbone.history.start(pushState: true)
     spinner.stop()
 
 opts =
@@ -22,14 +22,8 @@ opts =
   className: 'spinner'
   zIndex: 2e9
 
-spinner = new Spinner(opts).spin($('#wrapper')[0])
+spinner = new Spinner(opts).spin($('#wrapper > .loading')[0])
 
-$(spinner.el).css(
-  top: '50%'
-  marginTop: '-50px'
-)
-
-window.zIndex = 0
 window.DOING_AJAX = false
 window.AJAX_ERROR = false
 
