@@ -1,29 +1,6 @@
-<div class="flash-notice hide">
-  <div class="alert">
-  </div>
-</div>
+<%- render_partial 'shared/flash_notice' %>
 
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="brand" href="/">Mural de recados</a>
-      <% if @categorias.models: %>
-        <ul class="nav pull-left">
-          <% for cat in @categorias.models: %>
-            <li>
-              <a href="/categorias/<%= cat.get('id') %>">
-                <%= cat.get('nome') %>
-              </a>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-      <ul class="nav pull-right">
-        <li><a class="novo" href="#"><i class="icon-edit"></i> Novo recado</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%- render_partial 'shared/nav_bar', categorias: @categorias %>
 
 <div id="container" class="container-fluid">
   <div class="row-fluid">

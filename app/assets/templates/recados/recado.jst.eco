@@ -19,10 +19,14 @@
     <form action="#">
       <label for="cat_<%= @recado.cid %>">Categoria:</label>
       <select id="cat_<%= @recado.cid %>">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option></option>
+        <% for cat in @categorias.models: %>
+          <% catRecado = @recado.get('categoria') %>
+          <% if catRecado: %>
+            <% selected = 'selected="selected"' if cat.get('id') == catRecado.id %>
+          <% end %>
+          <option <%= selected %> value="<% cat.get('id') %>"><%= cat.get('nome') %></option>
+        <% end %>
       </select>
     </form>
     <a href="#" class="icon return" title="Voltar"><i class="icon-share-alt"></i></a>
