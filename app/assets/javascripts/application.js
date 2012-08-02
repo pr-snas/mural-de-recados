@@ -20,6 +20,7 @@
 //= require jquery.ui.resizable
 //= require jquery.transit
 //= require notice
+//= require render_partial
 //= require ./mural_de_recados
 //= require_tree ../templates/
 //= require_tree ./models
