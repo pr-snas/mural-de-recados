@@ -7,7 +7,8 @@ class MuralDeRecados.Views.Recado extends Backbone.View
     'click .return': 'return'
     'keyup .wrap': 'updateContent'
 
-  initialize: ->
+  initialize: (attr) ->
+    @categorias = attr.categorias
     @$el.data('backbone-view', this)
     @updateHigherZIndex()
     @loadStyle()
@@ -15,7 +16,7 @@ class MuralDeRecados.Views.Recado extends Backbone.View
     @initResizable()
 
   render: =>
-    @$el.append(@template(recado: @model, owner: @isOwner()))
+    @$el.append(@template(recado: @model, owner: @isOwner(), categorias: @categorias))
     @$el.find('.info, .settings, .return').tooltip()
     this
 
